@@ -23,10 +23,9 @@ jobs:
         run: pytest
 
       - name: Setup Minikube Daemon
-        run: eval $(minikube docker-env)
-
-      - name: Build Docker image
-        run: docker build -t my-app-image .
+        run: |
+          eval $(minikube docker-env)
+          docker build -t my-app-image .
 
       - name: Run K8S
         run: |
