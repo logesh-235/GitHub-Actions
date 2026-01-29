@@ -1,0 +1,35 @@
+name: CI-CD Pipeline
+
+on: push
+
+jobs:
+  build-test-deploy:
+    runs-on: self-hosted
+
+    steps:
+
+      name: Clone Repo
+      uses: uses: actions/checkout@v6
+
+      name: Setup Python
+      uses: actions/setup-python@v6
+      with:
+        python-version: '3.13' 
+
+      name: Install Dependencies
+      run: pip install -r requirement.txt
+
+      name: Run Tests
+      run: pytest
+
+      name: Setup Minikube Daemon
+      run: eval $(minikube docker-env)
+
+      name: Build Docker image
+      run: docker build -t my-app-image .
+
+      name: Run K8S
+      run: kubectl apply -f k8s/deployement.yml
+      run: kubectl apply -f k8s/service.yml
+
+
