@@ -29,7 +29,8 @@ jobs:
         run: docker build -t my-app-image .
 
       - name: Run K8S
-        run: kubectl apply -f k8s/deployement.yml
-        run: kubectl apply -f k8s/service.yml
+        run: |
+          kubectl apply -f k8s/deployement.yml
+          kubectl apply -f k8s/service.yml
 
 
