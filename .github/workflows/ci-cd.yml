@@ -8,28 +8,28 @@ jobs:
 
     steps:
 
-      name: Clone Repo
-      uses: actions/checkout@v6
+      - name: Clone Repo
+        uses: actions/checkout@v6
 
-      name: Setup Python
-      uses: actions/setup-python@v6
-      with:
-        python-version: '3.13' 
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.13' 
 
-      name: Install Dependencies
-      run: pip install -r requirement.txt
+      - name: Install Dependencies
+        run: pip install -r requirement.txt
 
-      name: Run Tests
-      run: pytest
+      - name: Run Tests
+        run: pytest
 
-      name: Setup Minikube Daemon
-      run: eval $(minikube docker-env)
+      - name: Setup Minikube Daemon
+        run: eval $(minikube docker-env)
 
-      name: Build Docker image
-      run: docker build -t my-app-image .
+      - name: Build Docker image
+        run: docker build -t my-app-image .
 
-      name: Run K8S
-      run: kubectl apply -f k8s/deployement.yml
-      run: kubectl apply -f k8s/service.yml
+      - name: Run K8S
+        run: kubectl apply -f k8s/deployement.yml
+        run: kubectl apply -f k8s/service.yml
 
 
