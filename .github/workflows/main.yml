@@ -1,11 +1,18 @@
-name: Simple Print Workflow
+name: Execute Py Script
 on:
-  push:
-    branches:
-        - main
+  push
+
 jobs:
-  print-message:
-    runs-on: ubuntu-latest
+  Py-Script:
+    runs-on: ubunti-latest
     steps:
-        - name: Print Hello, World!
-          run: echo "Hello, World!"
+      - name: checkout code
+        uses: actions/checkout@v6
+
+      - name: Python Setup
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'   
+
+      - name: Execute Code
+        run: python main.py  
