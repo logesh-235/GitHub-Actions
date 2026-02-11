@@ -15,4 +15,4 @@ jobs:
           python-version: '3.13'   
 
       - name: Execute Code
-        run: python main.py  
+        run: python3 main.py  
