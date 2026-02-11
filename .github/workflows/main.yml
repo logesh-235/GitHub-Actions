@@ -18,6 +18,9 @@ jobs:
         run: | 
           pip install --upgrade pip
           pip install -r requirements/main.txt
+    
+      - name: flake8 test
+        run: flake8 app/main.py
 
       - name: Execute Code
         run: python3 app/main.py
