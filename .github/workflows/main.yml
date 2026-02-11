@@ -23,4 +23,6 @@ jobs:
         run: flake8 app/main.py
 
       - name: Execute Code
+        env:
+          AWS_SECRET_KEY: ${{secrets.AWS_SECRET_KEY}}
         run: python3 app/main.py
