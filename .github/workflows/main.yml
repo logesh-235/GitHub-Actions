@@ -4,7 +4,7 @@ on:
 
 jobs:
   Py-Script:
-    runs-on: ubunti-latest
+    runs-on: ubuntu-latest
     steps:
       - name: checkout code
         uses: actions/checkout@v6
