@@ -15,7 +15,9 @@ jobs:
           python-version: '3.13'   
 
       - name: Install Dependencies
-        run: pip install -r requirements/main.txt
+        run: | 
+          pip install --upgrade pip
+          pip install -r requirements/main.txt
 
       - name: Execute Code
         run: python3 app/main.py
