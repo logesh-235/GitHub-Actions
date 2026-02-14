@@ -1,0 +1,11 @@
+name: Scheduled_Crone
+on: 
+  schedule:
+    - cron: '*/5 * * * *'
+
+jobs:
+  Timestamp_Echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Timestamp
+        run: echo "Current Date and Time ->  $current_date_time"
