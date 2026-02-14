@@ -17,5 +17,5 @@ jobs:
         uses: actions/upload-artifact@v6.0.0
         with:
           name: Upload Artifacts
-          path: dist
+          path: build
   
