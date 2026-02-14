@@ -1,0 +1,38 @@
+name: manual_trigger
+on: 
+  workflow_dispatch:
+    inputs:
+      name:
+        type: string
+        description: Name
+        required: true
+        default: "Logesh"
+      age:
+        type: number
+        description: Age
+        required: true
+      gender:
+        type: choice
+        description: Gender
+        options:
+          - Male
+          - Female
+      graduated:
+        type: boolean
+        description: Graduted?
+        required: true
+jobs:
+  Print_Inputs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo name
+        run: echo ${{inputs.name}}
+
+      - name: echo age
+        run: echo ${{inputs.age}}
+
+      - name: echo gender
+        run: echo ${{inputs.gender}}
+
+      - name: echo graduation status
+        run: echo ${{inputs.graduated}}
