@@ -6,6 +6,9 @@ on:
 jobs:
   Build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: greeting-react-app
     steps:
       - name: Setup Node.js environment
         uses: actions/setup-node@v6.2.0
