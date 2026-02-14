@@ -1,6 +1,6 @@
 name: Execute Py Script
 on:
-  push
+  workflow_dispatch:
 
 jobs:
   Py-Script:
