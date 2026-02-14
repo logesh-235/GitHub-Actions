@@ -29,7 +29,7 @@ jobs:
           path: greeting-react-app/build/
 
   Test:
-     runs-on: uubuntu-latest
+     runs-on: ubuntu-latest
      needs: Build
      steps:
        - name: Test
