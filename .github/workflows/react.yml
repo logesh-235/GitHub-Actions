@@ -16,6 +16,9 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v6.2.0
 
+      - name: Install Dependencies
+        run: npm install
+
       - name: Build App
         run: npm run build
 
