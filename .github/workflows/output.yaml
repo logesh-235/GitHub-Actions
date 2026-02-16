@@ -1,4 +1,4 @@
-name: Ouputs
+name: Outputs
 on: push
 
 jobs:
