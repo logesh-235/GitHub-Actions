@@ -30,7 +30,6 @@ jobs:
 
   Test:
      runs-on: ubuntu-latest
-     needs: Build
      steps:
        - name: Test
          run: echo "Application Tested"
