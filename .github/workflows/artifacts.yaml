@@ -19,5 +19,5 @@ jobs:
       - name: Download Artifacts
         uses: actions/download-artifact@v7.0.0
         with:
-          name: output.txt
+          name: output-artifact
           path: output
