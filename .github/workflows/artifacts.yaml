@@ -21,3 +21,5 @@ jobs:
         with:
           name: output-artifact
           path: output
+      - name: Print Output
+        run: cat output/output.txt
